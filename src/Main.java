@@ -21,6 +21,88 @@ public class Main {
         return word;
     }
 
+    public static void printHangman(int mistake) {
+        switch (mistake) {
+            case 1:
+                System.out.println("""
+            +---+
+            |   |
+                |
+                |
+                |
+                |
+          =========
+        """);
+                break;
+            case 2:
+                System.out.println("""
+            +---+
+            |   |
+            O   |
+                |
+                |
+                |
+          =========
+        """);
+                break;
+            case 3:
+                System.out.println("""
+            +---+
+            |   |
+            O   |
+            |   |
+                |
+                |
+          =========
+        """);
+                break;
+            case 4:
+                System.out.println("""
+            +---+
+            |   |
+            O   |
+           /|   |
+                |
+                |
+          =========
+        """);
+                break;
+            case 5:
+                System.out.println("""
+            +---+
+            |   |
+            O   |
+           /|\\  |
+                |
+                |
+          =========
+        """);
+                break;
+            case 6:
+                System.out.println("""
+            +---+
+            |   |
+            O   |
+           /|\\  |
+           /    |
+                |
+          =========
+        """);
+                break;
+            case 7:
+                System.out.println("""
+            +---+
+            |   |
+            O   |
+           /|\\  |
+           / \\  |
+                |
+          =========
+        """);
+                break;
+        }
+    }
+
     public static char[] maskWord(char[] word) {
         char[] maskWord = word.clone();
 
