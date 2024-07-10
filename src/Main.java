@@ -113,6 +113,15 @@ public class Main {
         return maskWord;
     }
 
+    public static char[] checkWord(char guess, char[] word, char[] maskWord) {
+        for (int i = 0; i < word.length; i++) {
+            if (guess == word[i]) {
+                maskWord[i] = guess;
+            }
+        }
+        return maskWord;
+    }
+
     public static void main(String[] args) {
         do {
             System.out.println("1 - Новая игра\n" +
