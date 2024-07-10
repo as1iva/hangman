@@ -21,6 +21,16 @@ public class Main {
         return word;
     }
 
+    public static char[] maskWord(char[] word) {
+        char[] maskWord = word.clone();
+
+        for (int index = 0; index < maskWord.length; index++) {
+            maskWord[index] = '_';
+        }
+
+        return maskWord;
+    }
+
     public static void main(String[] args) {
         do {
             System.out.println("1 - Новая игра\n" +
