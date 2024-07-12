@@ -122,7 +122,7 @@ public class Main {
         return maskWord;
     }
 
-    public static char[] checkWord(char guess, char[] word, char[] maskWord) {
+    public static void checkWord(char guess, char[] word, char[] maskWord) {
         int counter = 0;
 
         for (int i = 0; i < word.length; i++) {
@@ -135,7 +135,6 @@ public class Main {
         if (counter == 0) {
             mistakes++;
         }
-        return maskWord;
     }
 
     public static String checkGameState(char[] maskWord, int mistakes) {
