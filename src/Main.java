@@ -150,13 +150,10 @@ public class Main {
             if (letter == '_') {
                 System.out.println(maskWord);
                 return GAME_STATE_NOT_FINISHED;
-            } else {
-                break;
             }
         }
         return GAME_STATE_PLAYER_WON;
     }
-
 
     public static void main(String[] args) {
         do {
