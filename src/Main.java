@@ -11,7 +11,7 @@ public class Main {
 
     public static Random random = new Random();
 
-    public static int MISTAKES_TO_LOSE = 7;
+    public static int MISTAKES_TO_LOSE = 6;
 
     public static char[] getWord() {
         List<String> wordsFile = null;
@@ -29,11 +29,22 @@ public class Main {
 
     public static void printHangman(int mistake) {
         switch (mistake) {
-            case 1:
+            case 0:
                 System.out.println("""
             +---+
             |   |
                 |
+                |
+                |
+                |
+          =========
+        """);
+                break;
+            case 1:
+                System.out.println("""
+            +---+
+            |   |
+            O   |
                 |
                 |
                 |
@@ -45,7 +56,7 @@ public class Main {
             +---+
             |   |
             O   |
-                |
+            |   |
                 |
                 |
           =========
@@ -56,7 +67,7 @@ public class Main {
             +---+
             |   |
             O   |
-            |   |
+           /|   |
                 |
                 |
           =========
@@ -67,7 +78,7 @@ public class Main {
             +---+
             |   |
             O   |
-           /|   |
+           /|\\  |
                 |
                 |
           =========
@@ -79,23 +90,12 @@ public class Main {
             |   |
             O   |
            /|\\  |
-                |
-                |
-          =========
-        """);
-                break;
-            case 6:
-                System.out.println("""
-            +---+
-            |   |
-            O   |
-           /|\\  |
            /    |
                 |
           =========
         """);
                 break;
-            case 7:
+            case 6:
                 System.out.println("""
             +---+
             |   |
