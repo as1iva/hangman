@@ -115,13 +115,20 @@ public class Main {
 
     public static char[] checkWord(char guess, char[] word, char[] maskWord) {
         int mistakes = 0;
+        int counter = 0;
 
         for (int i = 0; i < word.length; i++) {
             if (guess == word[i]) {
                 maskWord[i] = guess;
+                counter++;
             }
         }
 
+        if (counter == 0) {
+            mistakes++;
+        }
+
+        checkGameState(maskWord, mistakes);
         return maskWord;
     }
 
