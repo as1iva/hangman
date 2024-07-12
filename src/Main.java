@@ -9,6 +9,7 @@ public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
     public static Random random = new Random();
+    public static int mistakes = 0;
     public static int MISTAKES_TO_LOSE = 6;
     public static String GAME_STATE_PLAYER_WON = "Вы победили!";
     public static String GAME_STATE_PLAYER_LOSE = "Вы проиграли!";
@@ -121,7 +122,6 @@ public class Main {
     }
 
     public static char[] checkWord(char guess, char[] word, char[] maskWord) {
-        int mistakes = 0;
         int counter = 0;
 
         for (int i = 0; i < word.length; i++) {
