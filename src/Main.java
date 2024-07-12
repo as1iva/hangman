@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -153,6 +154,25 @@ public class Main {
         return GAME_STATE_PLAYER_WON;
     }
 
+    public static void startGameLoop() {
+        char[] word = getWord();
+        char[] maskWord = maskWord(word);
+        System.out.println(maskWord);
+        do {
+            char guess = scanner.next().charAt(0);
+            checkWord(guess, word, maskWord);
+
+            String gameState = checkGameState(maskWord, mistakes);
+
+            if (!Objects.equals(gameState, GAME_STATE_NOT_FINISHED)) {
+                System.out.println(gameState);
+                mistakes = 0;
+                return;
+            }
+        } while (true);
+
+    }
+
     public static void main(String[] args) {
         do {
             System.out.println("1 - Новая игра\n" +
@@ -161,7 +181,7 @@ public class Main {
             int choice = scanner.nextInt();
 
             if (choice == 1) {
-                //startGameLoop();
+                startGameLoop();
             }
             else {
                 System.out.println("До встречи!");
