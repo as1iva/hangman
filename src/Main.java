@@ -119,11 +119,28 @@ public class Main {
         for (int i = 0; i < word.length; i++) {
             if (guess == word[i]) {
                 maskWord[i] = guess;
-            } else {
-                mistakes++;
             }
         }
+
         return maskWord;
+    }
+
+    public static void checkGameState(char[] maskWord, int mistakes) {
+        if (mistakes == 7) {
+            System.out.println("Вы проиграли!\n");
+        } else {
+            printHangman(mistakes);
+        }
+
+        for (char letter : maskWord) {
+            if (letter == '_') {
+                System.out.println(maskWord);
+                return;
+            } else {
+                break;
+            }
+        }
+        System.out.println("Вы выиграли!\n");
     }
 
     public static void main(String[] args) {
@@ -136,6 +153,17 @@ public class Main {
 
             if (choice == 1) {
                 // gameLoop
+
+                char[] word = getWord();
+                char[] guessWord = maskWord(word);
+
+                System.out.println(word);
+                System.out.println(guessWord);
+
+                char guess = scanner.next().charAt(0);
+                char[] check = checkWord(guess, word, guessWord);
+
+                System.out.println(check);
             }
             else {
                 System.out.println("До встречи!");
