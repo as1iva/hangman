@@ -134,8 +134,6 @@ public class Main {
         if (counter == 0) {
             mistakes++;
         }
-
-        checkGameState(maskWord, mistakes);
         return maskWord;
     }
 
