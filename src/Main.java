@@ -8,10 +8,11 @@ import java.util.Scanner;
 public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
-
     public static Random random = new Random();
-
     public static int MISTAKES_TO_LOSE = 6;
+    public static String GAME_STATE_PLAYER_WON = "Вы победили!";
+    public static String GAME_STATE_PLAYER_LOSE = "Вы проиграли!";
+    public static String GAME_STATE_NOT_FINISHED = "Игра не закончена";
 
     public static char[] getWord() {
         List<String> wordsFile = null;
@@ -138,9 +139,9 @@ public class Main {
         return maskWord;
     }
 
-    public static void checkGameState(char[] maskWord, int mistakes) {
+    public static String checkGameState(char[] maskWord, int mistakes) {
         if (mistakes == MISTAKES_TO_LOSE) {
-            System.out.println("Вы проиграли!\n");
+            return GAME_STATE_PLAYER_LOSE;
         } else {
             printHangman(mistakes);
         }
@@ -148,12 +149,12 @@ public class Main {
         for (char letter : maskWord) {
             if (letter == '_') {
                 System.out.println(maskWord);
-                return;
+                return GAME_STATE_NOT_FINISHED;
             } else {
                 break;
             }
         }
-        System.out.println("Вы выиграли!\n");
+        return GAME_STATE_PLAYER_WON;
     }
 
 
@@ -165,18 +166,7 @@ public class Main {
             int choice = scanner.nextInt();
 
             if (choice == 1) {
-                // gameLoop
-
-                char[] word = getWord();
-                char[] guessWord = maskWord(word);
-
-                System.out.println(word);
-                System.out.println(guessWord);
-
-                char guess = scanner.next().charAt(0);
-                char[] check = checkWord(guess, word, guessWord);
-
-                System.out.println(check);
+                //startGameLoop();
             }
             else {
                 System.out.println("До встречи!");
