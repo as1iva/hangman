@@ -7,9 +7,15 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static Scanner scanner = new Scanner(System.in);
+
+    public static Random random = new Random();
+
+    public static int MISTAKES_TO_LOSE = 7;
+
     public static char[] getWord() {
         List<String> wordsFile = null;
-        Random random = new Random();
+
 
         try {
             wordsFile = Files.readAllLines(Paths.get("russian-words.txt"));
@@ -133,7 +139,7 @@ public class Main {
     }
 
     public static void checkGameState(char[] maskWord, int mistakes) {
-        if (mistakes == 7) {
+        if (mistakes == MISTAKES_TO_LOSE) {
             System.out.println("Вы проиграли!\n");
         } else {
             printHangman(mistakes);
@@ -150,12 +156,12 @@ public class Main {
         System.out.println("Вы выиграли!\n");
     }
 
+
     public static void main(String[] args) {
         do {
             System.out.println("1 - Новая игра\n" +
                     "2 - Выйти");
 
-            Scanner scanner = new Scanner(System.in);
             int choice = scanner.nextInt();
 
             if (choice == 1) {
