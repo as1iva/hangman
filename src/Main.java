@@ -139,6 +139,7 @@ public class Main {
 
     public static String checkGameState(char[] maskWord, int mistakes) {
         if (mistakes == MISTAKES_TO_LOSE) {
+            printHangman(MISTAKES_TO_LOSE);
             return GAME_STATE_PLAYER_LOSE;
         } else {
             printHangman(mistakes);
