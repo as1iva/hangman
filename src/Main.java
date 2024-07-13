@@ -194,6 +194,7 @@ public class Main {
 
             if (!Objects.equals(gameState, GAME_STATE_NOT_FINISHED)) {
                 System.out.println(gameState);
+                System.out.println("Загаданное слово: " + String.valueOf(word) + "\n");
                 mistakes = 0;
                 letters.clear();
                 return;
