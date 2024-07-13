@@ -10,9 +10,9 @@ public class Main {
     public static int mistakes = 0;
     public static List<Character> letters = new ArrayList<>();
     public static int MISTAKES_TO_LOSE = 6;
-    public static String GAME_STATE_PLAYER_WON = "Вы победили!\n";
-    public static String GAME_STATE_PLAYER_LOSE = "Вы проиграли!\n";
-    public static String GAME_STATE_NOT_FINISHED = "Игра не закончена\n";
+    public static String GAME_STATE_PLAYER_WON = "Вы победили!";
+    public static String GAME_STATE_PLAYER_LOSE = "Вы проиграли!";
+    public static String GAME_STATE_NOT_FINISHED = "Игра не закончена";
 
     public static char[] getWord() {
         List<String> wordsFile = null;
