@@ -146,6 +146,7 @@ public class Main {
 
         for (char letter : maskWord) {
             if (letter == '_') {
+                System.out.print("Загаданное слово: ");
                 System.out.println(maskWord);
                 return GAME_STATE_NOT_FINISHED;
             }
@@ -156,8 +157,11 @@ public class Main {
     public static void startGameLoop() {
         char[] word = getWord();
         char[] maskWord = maskWord(word);
+
+        System.out.print("Загаданное слово: ");
         System.out.println(maskWord);
         do {
+            System.out.print("Введите букву: ");
             char guess = scanner.next().charAt(0);
             checkWord(guess, word, maskWord);
 
@@ -173,9 +177,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        System.out.println("Добро пожаловать в виселицу!");
         do {
-            System.out.println("1 - Новая игра\n" +
-                    "2 - Выйти");
+            System.out.println("1 - Новая игра\n" + "2 - Выйти");
 
             int choice = scanner.nextInt();
 
