@@ -241,6 +241,7 @@ public class Main {
                 startGameLoop();
             } else if (Objects.equals(choice, "2")) {
                 System.out.println("До встречи!");
+                scanner.close();
                 return;
             } else {
                 System.out.println("Введите корректную цифру.");
