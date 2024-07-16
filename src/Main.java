@@ -156,6 +156,7 @@ public class Main {
 
         Collections.sort(letters);
         System.out.println(letters);
+
         return true;
     }
 
@@ -180,6 +181,8 @@ public class Main {
     public static void startGameLoop() {
         char[] word = getWord();
         char[] maskWord = maskWord(word);
+
+        printHangman(0);
 
         System.out.print("Загаданное слово: ");
         System.out.println(maskWord);
@@ -206,12 +209,13 @@ public class Main {
             if (!Objects.equals(gameState, GAME_STATE_NOT_FINISHED)) {
                 System.out.println(gameState);
                 System.out.println("Загаданное слово: " + String.valueOf(word) + "\n");
+
                 mistakes = 0;
                 letters.clear();
+
                 return;
             }
         } while (true);
-
     }
 
     public static void main(String[] args) {
