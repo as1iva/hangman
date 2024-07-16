@@ -159,6 +159,14 @@ public class Main {
 
         return true;
     }
+    public static boolean isChoiceCorrect(String choice) {
+        String regex = "^[1-9]$";
+        if (!choice.matches(regex)) {
+            System.out.println("Можно ввести только одну цифру.");
+            return false;
+        }
+        return true;
+    }
 
     public static String checkGameState(char[] maskWord, int mistakes) {
         if (mistakes == MISTAKES_TO_LOSE) {
@@ -223,14 +231,19 @@ public class Main {
         do {
             System.out.println("1 - Новая игра\n" + "2 - Выйти");
 
-            int choice = scanner.nextInt();
+            String choice = scanner.next();
 
-            if (choice == 1) {
-                startGameLoop();
+            if (!isChoiceCorrect(choice)) {
+                continue;
             }
-            else {
+
+            if (Objects.equals(choice, "1")) {
+                startGameLoop();
+            } else if (Objects.equals(choice, "2")) {
                 System.out.println("До встречи!");
                 return;
+            } else {
+                System.out.println("Введите корректную цифру.");
             }
         } while (true);
     }
