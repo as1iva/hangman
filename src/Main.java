@@ -148,7 +148,7 @@ public class Main {
 
         for (Character letter : letters) {
             if (guess.equals(letter)) {
-                System.out.println("Эта буква была введена раннее, попробуйте другую!");
+                System.out.println("Эта буква была введена раннее, попробуйте другую.");
                 return false;
             }
         }
@@ -185,10 +185,21 @@ public class Main {
         System.out.println(maskWord);
         do {
             System.out.print("Введите букву: ");
-            char guess = scanner.next().charAt(0);
+
+            String letter = scanner.next();
+            char guess;
+
+            if (letter != null && letter.length() == 1) {
+                guess = letter.charAt(0);
+            } else {
+                System.out.println("Можно вводить только одну букву.");
+                continue;
+            }
+
             if (!isLetterCorrect(guess)) {
                 continue;
             }
+
             checkWord(guess, word, maskWord);
             String gameState = checkGameState(maskWord, mistakes);
 
