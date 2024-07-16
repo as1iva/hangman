@@ -197,7 +197,7 @@ public class Main {
         do {
             System.out.print("Введите букву: ");
 
-            String letter = scanner.next();
+            String letter = scanner.nextLine();
             char guess;
 
             if (letter != null && letter.length() == 1) {
@@ -231,7 +231,7 @@ public class Main {
         do {
             System.out.println("1 - Новая игра\n" + "2 - Выйти");
 
-            String choice = scanner.next();
+            String choice = scanner.nextLine();
 
             if (!isChoiceCorrect(choice)) {
                 continue;
