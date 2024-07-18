@@ -105,6 +105,7 @@ public class Main {
             sizeFile = wordsFile.size();
         } catch (IOException e) {
             System.out.println("Ошибка. Файл не найден.");
+            System.exit(1);
         } catch (NullPointerException e) {
             System.out.println("Ошибка. Файл пустой.");
             System.exit(1);
