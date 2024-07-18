@@ -7,8 +7,8 @@ public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
     public static Random random = new Random();
-    public static int mistakes = 0;
     public static List<Character> letters = new ArrayList<>();
+    public static int mistakes = 0;
     public static int MISTAKES_TO_LOSE = 6;
     public static String GAME_STATE_PLAYER_WON = "Вы победили!";
     public static String GAME_STATE_PLAYER_LOSE = "Вы проиграли!";
