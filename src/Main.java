@@ -10,6 +10,8 @@ public class Main {
     public static List<Character> letters = new ArrayList<>();
     public static int mistakes = 0;
     public static int MISTAKES_TO_LOSE = 6;
+    private final static String PLAY = "1";
+    private final static String EXIT = "2";
     public static String GAME_STATE_PLAYER_WON = "Вы победили!";
     public static String GAME_STATE_PLAYER_LOSE = "Вы проиграли!";
     public static String GAME_STATE_NOT_FINISHED = "Игра не закончена";
@@ -235,7 +237,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Добро пожаловать в виселицу!");
         do {
-            System.out.println("1 - Новая игра\n" + "2 - Выйти");
+            System.out.printf("%s - Новая игра\n" + "%s - Выйти\n", PLAY, EXIT);
 
             String choice = scanner.nextLine();
 
@@ -243,9 +245,9 @@ public class Main {
                 continue;
             }
 
-            if (Objects.equals(choice, "1")) {
+            if (Objects.equals(choice, PLAY)) {
                 startGameLoop();
-            } else if (Objects.equals(choice, "2")) {
+            } else if (Objects.equals(choice, EXIT)) {
                 System.out.println("До встречи!");
                 scanner.close();
                 return;
