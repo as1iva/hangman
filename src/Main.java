@@ -19,7 +19,7 @@ public class Main {
         try {
             wordsFile = Files.readAllLines(Paths.get("russian-words.txt"));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Ошибка. Файл не найден.");
         }
         int sizeFile = wordsFile.size();
         int randomWord = random.nextInt(0, sizeFile);
