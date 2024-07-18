@@ -1,3 +1,5 @@
+package main;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -103,7 +105,7 @@ public class Main {
         int sizeFile = 0;
 
         try {
-            wordsFile = Files.readAllLines(Paths.get("russian-words.txt"));
+            wordsFile = Files.readAllLines(Paths.get("resources/russian-words.txt"));
             sizeFile = wordsFile.size();
         } catch (IOException e) {
             System.out.println("Ошибка. Файл не найден.");
