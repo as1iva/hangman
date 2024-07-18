@@ -21,7 +21,9 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        char[] word = wordsFile.get(random.nextInt(0, wordsFile.size())).toCharArray();
+        int sizeFile = wordsFile.size();
+        int randomWord = random.nextInt(0, sizeFile);
+        char[] word = wordsFile.get(randomWord).toCharArray();
 
         return word;
     }
