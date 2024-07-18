@@ -112,9 +112,8 @@ public class Main {
         }
 
         int randomWord = random.nextInt(sizeFile);
-        char[] word = wordsFile.get(randomWord).toCharArray();
 
-        return word;
+        return wordsFile.get(randomWord).toCharArray();
     }
 
     public static char[] maskWord(char[] word) {
