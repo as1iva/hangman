@@ -111,7 +111,7 @@ public class Main {
             System.exit(1);
         }
 
-        int randomWord = random.nextInt(0, sizeFile);
+        int randomWord = random.nextInt(sizeFile);
         char[] word = wordsFile.get(randomWord).toCharArray();
 
         return word;
