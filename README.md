@@ -17,14 +17,18 @@ git clone git@github.com:as1iva/hangman.git
 cd hangman
 ```
 
-Скомпилируйте java файл
+Скомпилируйте программу
 
 ```
-javac Main.java
+javac src/main/*.java -d classes
+```
+
+```
+jar -cvfm hangman.jar resources/META-INF/MANIFEST.MF -C classes main -C resources russian-words.txt
 ```
 
 Запустите игру
 
 ```
-java Main
+java -jar hangman.jar
 ```
