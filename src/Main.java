@@ -119,9 +119,7 @@ public class Main {
     public static char[] maskWord(char[] word) {
         char[] maskWord = word.clone();
 
-        for (int index = 0; index < maskWord.length; index++) {
-            maskWord[index] = '_';
-        }
+        Arrays.fill(maskWord, '_');
 
         return maskWord;
     }
