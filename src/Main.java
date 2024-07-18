@@ -167,6 +167,7 @@ public class Main {
 
         return true;
     }
+
     public static boolean isChoiceCorrect(String choice) {
         String regex = "^[1-9]$";
         if (!choice.matches(regex)) {
