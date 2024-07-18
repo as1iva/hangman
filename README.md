@@ -14,7 +14,7 @@ git clone git@github.com:as1iva/hangman.git
 Перейдите в директорию с проектом
 
 ```
-cd Hangman
+cd hangman
 ```
 
 Скомпилируйте java файл
