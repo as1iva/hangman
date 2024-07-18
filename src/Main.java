@@ -237,7 +237,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Добро пожаловать в виселицу!");
         do {
-            System.out.printf("%s - Новая игра\n" + "%s - Выйти\n", PLAY, EXIT);
+            System.out.printf("%s - Новая игра\n%s - Выйти\n", PLAY, EXIT);
 
             String choice = scanner.nextLine();
 
