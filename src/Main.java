@@ -98,12 +98,18 @@ public class Main {
 
     public static char[] getWord() {
         List<String> wordsFile = null;
+        int sizeFile = 0;
+
         try {
             wordsFile = Files.readAllLines(Paths.get("russian-words.txt"));
+            sizeFile = wordsFile.size();
         } catch (IOException e) {
             System.out.println("Ошибка. Файл не найден.");
+        } catch (NullPointerException e) {
+            System.out.println("Ошибка. Файл пустой.");
+            System.exit(1);
         }
-        int sizeFile = wordsFile.size();
+
         int randomWord = random.nextInt(0, sizeFile);
         char[] word = wordsFile.get(randomWord).toCharArray();
 
