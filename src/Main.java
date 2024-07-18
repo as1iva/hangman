@@ -14,20 +14,6 @@ public class Main {
     public static String GAME_STATE_PLAYER_LOSE = "Вы проиграли!";
     public static String GAME_STATE_NOT_FINISHED = "Игра не закончена";
 
-    public static char[] getWord() {
-        List<String> wordsFile = null;
-        try {
-            wordsFile = Files.readAllLines(Paths.get("russian-words.txt"));
-        } catch (IOException e) {
-            System.out.println("Ошибка. Файл не найден.");
-        }
-        int sizeFile = wordsFile.size();
-        int randomWord = random.nextInt(0, sizeFile);
-        char[] word = wordsFile.get(randomWord).toCharArray();
-
-        return word;
-    }
-
     public static void printHangman(int mistake) {
         switch (mistake) {
             case 0:
@@ -108,6 +94,20 @@ public class Main {
         """);
                 break;
         }
+    }
+
+    public static char[] getWord() {
+        List<String> wordsFile = null;
+        try {
+            wordsFile = Files.readAllLines(Paths.get("russian-words.txt"));
+        } catch (IOException e) {
+            System.out.println("Ошибка. Файл не найден.");
+        }
+        int sizeFile = wordsFile.size();
+        int randomWord = random.nextInt(0, sizeFile);
+        char[] word = wordsFile.get(randomWord).toCharArray();
+
+        return word;
     }
 
     public static char[] maskWord(char[] word) {
